@@ -1,0 +1,304 @@
+/* Login */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Menggunakan tinggi minimum 100 viewport height untuk memastikan konten di tengah vertikal */
+  margin: 0; /* Menghapus margin default */
+  background-color: #f0f0f0; /* Menambahkan warna latar belakang untuk kontras */
+}
+
+/* Login Heading */
+.login {
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  font-weight: bold;
+  font-size: x-large;
+  margin-bottom: 10px;
+}
+
+/* Card Container */
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 390px;
+  width: 400px;
+  flex-direction: column;
+  gap: 35px;
+  background: #1d2730;
+  box-shadow: 16px 16px 32px #c8c8c8, -16px -16px 32px #fefefe;
+  border-radius: 8px;
+}
+
+/* Input Box */
+.inputBox {
+  position: relative;
+  width: 300px;
+  margin-right: 28px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transition: 0.1s;
+  border-bottom-left-radius: 8px;
+}
+
+.inputBox span {
+  margin-top: 5px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-6px);
+  margin-left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #ffffff;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  border-radius: 8px;
+  -webkit-transform: translateY(-6px);
+  -moz-transform: translateY(-6px);
+  -ms-transform: translateY(-6px);
+  -o-transform: translateY(-6px);
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+  transform: translateX(113px) translateY(-15px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffffff;
+  letter-spacing: 0.2em;
+  color: #000000;
+  border: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+}
+
+/* Submit Button */
+.submit {
+  color: #ffffff;
+  height: 45px;
+  width: 150px;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.5s;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-top: 25px;
+  margin-bottom: 1rem;
+}
+
+.submit:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+/* Form */
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #1d2730;
+  border-radius: 10px;
+  overflow: hidden;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  animation: form-animation 0.5s ease-in-out;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.login-box{
+  width: 370px;
+  height: 500px;
+  margin-bottom: 100px;
+}
+
+.form a{
+  text-decoration: none;
+  color: white;
+  font-size: larger;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+.input-box{
+    width: 370px;
+    height: 500px;
+}
+
+@keyframes form-animation {
+  from {
+    transform: rotateX(-30deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.input {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  color: rgb(255, 255, 255);
+  border: 2px solid #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.input::placeholder {
+  color: #ffffff79;
+  letter-spacing: 1px;
+}
+
+.input:hover,
+.input:focus {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.114);
+  transform: scale(1.05) rotateY(20deg);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+button {
+  margin-top: 30px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4c8ac1;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateX(-10deg);
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+button:hover {
+  background-color: #105e8b;
+  font-size: 17px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.input-container {
+  margin-top: 15px;
+}
+
+.input {
+  width: 100%; /* Menyesuaikan lebar input dengan 100% */
+  padding: 10px; /* Memberikan padding agar input lebih berjarak dari tepi kotak */
+  box-sizing: border-box; /* Menghitung padding dan border ke dalam ukuran total input */
+}
+
+label {
+  color: white; /* Mengubah warna label menjadi putih */
+}
+
+/* Carousel */
+.carousel {
+  max-width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carousel img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.card h-100 bg-dark text-white img {
+  size: 10px;
+}
+
+.user-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.user-box label,
+.user-box input {
+  margin-right: 1rem;
+}
+
+.user-box select {
+  width: auto;
+}
+
+/* Alert box */
+.alert-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #420400;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+/* Styles for the close button */
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #fff;
+}
+
+/* Animation for the alert box */
+@keyframes slideIn {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 10%;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}

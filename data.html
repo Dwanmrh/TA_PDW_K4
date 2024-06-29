@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Tables</title>
+    <link rel="stylesheet" href="./style/data.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-l1/fjEzSseexSsVD8Vw7qBYMWl5XqH20bywOpeCmHs+09ZBQlxZQn0BOdsWldNSbPtIL4PCPd2NfRUIji2Y69A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg fixed-top"
+      style="background-color: rgba(0, 0, 0, 0.5)"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand fw-bold"
+          style="color: white; font-size: 30px"
+          href="#"
+          >Bimbingan TA</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active mx-4"
+                style="color: white; font-size: 20px"
+                aria-current="page"
+                href="./home.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                style="color: white; font-size: 20px"
+                href="#About"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link ms-4"
+                style="color: white; font-size: 20px"
+                href="./index.html"
+                >Logout</a
+              >
+              <!-- Placeholder link for logout -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="table-container">
+      <h1>JADWAL BIMBINGAN</h1>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nama Mahasiswa</th>
+            <th>Nama Dosen</th>
+            <th>Tanggal Bimbingan</th>
+            <th>Tanggal Ujian</th>
+            <th>Materi Bimbingan</th>
+          </tr>
+        </thead>
+        <tbody id="table1Body">
+          <!-- Data will be inserted here -->
+        </tbody>
+      </table>
+
+      <h1>DATA MAHASISWA</h1>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Program</th>
+            <th>Status Bimbingan</th>
+            <th>No Telepon</th>
+          </tr>
+        </thead>
+        <tbody id="table2Body">
+          <!-- Data will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let form1Data = JSON.parse(localStorage.getItem("form1Data"));
+        let form2Data = JSON.parse(localStorage.getItem("form2Data"));
+
+        if (form1Data) {
+          let table1Body = document.getElementById("table1Body");
+          let row1 = table1Body.insertRow();
+          row1.insertCell(0).textContent = form1Data.nama_mahasiswa;
+          row1.insertCell(1).textContent = form1Data.nama_dosen;
+          row1.insertCell(2).textContent = form1Data.tanggal_bimbingan;
+          row1.insertCell(3).textContent = form1Data.tanggal_ujian;
+          row1.insertCell(4).textContent = form1Data.materi_bimbingan;
+        }
+
+        if (form2Data) {
+          let table2Body = document.getElementById("table2Body");
+          let row2 = table2Body.insertRow();
+          row2.insertCell(0).textContent = form2Data.nama;
+          row2.insertCell(1).textContent = form2Data.nim;
+          row2.insertCell(2).textContent = form2Data.program;
+          row2.insertCell(3).textContent = form2Data.status_bimbingan;
+          row2.insertCell(4).textContent = form2Data.no_telepon;
+        }
+      });
+    </script>
+  </body>
+</html>

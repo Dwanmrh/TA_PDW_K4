@@ -1,0 +1,96 @@
+/* style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.table-container {
+    width: 90%;
+    margin: 80px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 2px solid #add8e6;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ccc;
+    word-wrap: break-word;
+}
+
+th {
+    background-color: #518da1; /* Light blue color */
+    font-size: 10px;
+    color: #fff;
+}
+
+td {
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+tr:nth-child(even) td {
+    background-color: #e9e9e9;
+}
+
+@media (min-width: 600px) {
+    th, td {
+        padding: 15px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 599px) {
+    th, td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Additional styling for a more polished look */
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.delete-icon {
+    cursor: pointer;
+    color: #ff6347; /* Tomato color */
+    margin-left: 5px;
+}
+
+.delete-icon:hover {
+    color: #cc0000; /* Darker red on hover */
+}
